@@ -1,41 +1,96 @@
-# Compiled Lua sources
-luac.out
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local Loby = Instance.new("TextButton")
+local GameArena = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local openmain = Instance.new("Frame")
+local open = Instance.new("TextButton")
+--Properties:
+ScreenGui.Parent = game.CoreGui
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.new(0, 0, 0)
+main.Position = UDim2.new(0.0203577988, 0, 0.641277611, 0)
+main.Size = UDim2.new(0, 332, 0, 211)
+main.Visible = false
+main.Active = true
+main.Draggable = true
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+title.Name = "title"
+title.Parent = main
+title.BackgroundColor3 = Color3.new(1, 0, 1)
+title.Size = UDim2.new(0, 332, 0, 31)
+title.Font = Enum.Font.GothamBold
+title.Text = "Granita Hub"
+title.TextColor3 = Color3.new(0, 0, 0)
+title.TextSize = 14
 
-# Precompiled Headers
-*.gch
-*.pch
+Loby.Name = "Loby"
+Loby.Parent = main
+Loby.BackgroundColor3 = Color3.new(0.333333, 1, 0)
+Loby.Position = UDim2.new(0.036144577, 0, 0.379146934, 0)
+Loby.Size = UDim2.new(0, 110, 0, 50)
+Loby.Font = Enum.Font.GothamBold
+Loby.Text = "Loby"
+Loby.TextColor3 = Color3.new(0, 0, 0)
+Loby.TextScaled = true
+Loby.TextSize = 10
+Loby.TextWrapped = true
+Loby.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-240.698486328125, 194.57481384277344, 307.7963562011719)
+end)
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+GameArena.Name = "GameArena"
+GameArena.Parent = main
+GameArena.BackgroundColor3 = Color3.new(0.333333, 1, 0)
+GameArena.Position = UDim2.new(0.614457846, 0, 0.379146934, 0)
+GameArena.Size = UDim2.new(0, 110, 0, 50)
+GameArena.Font = Enum.Font.GothamBold
+GameArena.Text = "GameArena"
+GameArena.TextColor3 = Color3.new(0, 0, 0)
+GameArena.TextScaled = true
+GameArena.TextSize = 14
+GameArena.TextWrapped = true
+GameArena.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-95.5428695678711, 47.674869537353516, 24.917409896850586)
+end)
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+close.Name = "close"
+close.Parent = main
+close.BackgroundColor3 = Color3.new(1, 0, 0)
+close.Position = UDim2.new(0.879518092, 0, 0, 0)
+close.Size = UDim2.new(0, 40, 0, 31)
+close.Font = Enum.Font.GothamBlack
+close.Text = "X"
+close.TextColor3 = Color3.new(0, 0, 0)
+close.TextScaled = true
+close.TextSize = 14
+close.TextWrapped = true
+close.MouseButton1Down:connect(function()
+main.Visible = false
+openmain.Visible = true
+end)
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+openmain.Name = "openmain"
+openmain.Parent = ScreenGui
+openmain.BackgroundColor3 = Color3.new(1, 1, 1)
+openmain.Position = UDim2.new(0.00801973976, 0, 0.423832953, 0)
+openmain.Size = UDim2.new(0, 100, 0, 28)
+openmain.Active = true
+openmain.Draggable = true
 
+open.Name = "open"
+open.Parent = openmain
+open.BackgroundColor3 = Color3.new(1, 0, 0)
+open.Size = UDim2.new(0, 100, 0, 28)
+open.Font = Enum.Font.GothamBold
+open.Text = "OPEN"
+open.TextColor3 = Color3.new(0, 0, 0)
+open.TextSize = 18
+open.TextWrapped = true
+open.MouseButton1Down:connect(function()
+openmain.Visible = false
+main.Visible = true
+end)
